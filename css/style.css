@@ -1,0 +1,388 @@
+:root {
+  --primary: #ff0000;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/* NavBar Style Start */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 2%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.navbar .navbar-logo h1 {
+  text-align: center;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::before,
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a::before {
+  top: -3px;
+  transform-origin: left;
+}
+
+.navbar .navbar-nav a::after {
+  bottom: -3px;
+  transform-origin: right;
+}
+
+.navbar .navbar-nav a:hover::before,
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.3rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* NavBar Style End */
+
+/* Hero Style Start */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero .content {
+  padding: 1.4rem 10%;
+  max-width: 70rem;
+}
+
+.hero .content h1 {
+  font-size: 4em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  color: fff;
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.8rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta:hover {
+  color: var(--primary);
+  background-color: #fff;
+}
+/* Hero Style End */
+
+/* Footer Style Start */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 2%;
+  background-color: var(--primary);
+}
+
+.footer a:hover {
+  color: var(--bg);
+}
+
+.footer p,
+.footer a {
+  color: #fff;
+}
+
+.footer .contact-person {
+  display: flex;
+}
+
+.footer .contact-person .phone,
+.footer .contact-person .email {
+  display: flex;
+}
+
+.footer .contact-person .phone p,
+.footer .contact-person .email p {
+  padding: 0.3rem;
+}
+
+.footer .contact-person .phone {
+  margin: 0 1rem 0 0;
+}
+
+.footer .social {
+  display: flex;
+}
+
+.footer .social p {
+  padding: 3px 10px 0 0;
+}
+
+.footer .social a {
+  margin: 0 0.5rem;
+}
+/* Footer Style End */
+
+/* Login Form Start */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.login-container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--bg);
+  margin: auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 25%;
+  height: auto;
+}
+
+.login-container .close-icon {
+  position: absolute;
+  right: 1rem;
+}
+
+.login-container .close-icon:hover {
+  color: var(--primary);
+}
+
+.login-content h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.login-content label {
+  display: block;
+  margin-top: 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.login-content input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 0 0.8rem;
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.login-content button {
+  margin-top: 2rem;
+  width: 100%;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 1.2rem 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-content button:hover {
+  background-color: var(--primary);
+}
+
+/* Login Form End */
+
+/* Media Queris */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+
+  .login-container {
+    width: 30%;
+    height: auto;
+  }
+}
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(1, 1, 1, 0.8);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #fff;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5px;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .navbar .navbar-nav a::before {
+    transform-origin: right;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: left;
+  }
+
+  .navbar .navbar-nav a:hover::before,
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(1);
+    transition: 0.2s linear;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer .contact-person,
+  .footer .social {
+    justify-content: center;
+  }
+
+  .footer .credit {
+    margin-bottom: 1.8rem;
+  }
+
+  .footer .credit p {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .footer .social p {
+    padding: 1px 10px 0 0;
+  }
+
+  .footer {
+    font-size: 1.5rem;
+  }
+
+  .login-container {
+    width: 50%;
+    height: auto;
+  }
+}
+/* Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  .footer .contact-person p {
+    font-size: 75%;
+  }
+
+  .login-container {
+    width: 70%;
+    height: auto;
+  }
+}
