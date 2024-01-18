@@ -16,6 +16,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: #fff;
+  height: 2000px;
 }
 
 /* NavBar Style Start */
